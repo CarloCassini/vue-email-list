@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>vue email list</title>
 
+    <!-- inseriamo axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- inseriamo VUE -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>
+    <!-- inseriamo il mio main -->
     <script src="./js/main.js" defer></script>
   </head>
   <body>
-    <h1>we</h1>
+    <div id="app">
+      <div v-for="(email,index) in emails">
+        <h1>{{index+1 + " " + email}}</h1>
+      </div>
+    </div>
   </body>
 </html>
