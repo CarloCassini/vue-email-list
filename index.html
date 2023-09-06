@@ -15,9 +15,15 @@
   </head>
   <body>
     <div id="app">
-      <div v-for="(email,index) in emails">
-        <h1>{{index+1 + " " + email}}</h1>
+      <div v-if=" emails.length==10">
+        <div v-for="(email,index) in emails">
+          <h1>{{index+1}} {{email}}</h1>
+        </div>
       </div>
+      <!-- 
+      <div v-for="(email,index) in emails">
+        <h1>{{index+1}} {{email}}</h1>
+      </div> -->
     </div>
   </body>
 </html>

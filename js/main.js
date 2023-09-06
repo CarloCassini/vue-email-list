@@ -6,6 +6,7 @@ createApp({
   data() {
     return {
       emails: [],
+      // emailsx: [],
       // inserisci le variabili della app
       // slides: []
     };
@@ -14,12 +15,12 @@ createApp({
   methods: {
     // inserisci i metodi
     createMails(total) {
+      console.table(total);
       for (let i = 1; i <= total; i++) {
         axios
           .get("https://flynn.boolean.careers/exercises/api/random/mail")
           .then((response) => {
             this.emails.push(response.data.response);
-            console.table(this.emails);
           });
       }
     },
