@@ -6,6 +6,7 @@ createApp({
   data() {
     return {
       emails: [],
+      quante: 0,
       // emailsx: [],
       // inserisci le variabili della app
       // slides: []
@@ -15,7 +16,6 @@ createApp({
   methods: {
     // inserisci i metodi
     createMails(total) {
-      console.table(total);
       for (let i = 1; i <= total; i++) {
         axios
           .get("https://flynn.boolean.careers/exercises/api/random/mail")
@@ -27,7 +27,9 @@ createApp({
   },
 
   created() {
-    this.createMails(10);
+    this.quante = prompt("quante mail vuoi generare?");
+
+    this.createMails(this.quante);
     // inserisci app da lanciare all'avvio
   },
 }).mount("#app");
